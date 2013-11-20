@@ -17,7 +17,7 @@ clean:
 	rm --recursive --force local/
 
 update: validate
-	git rm -r --force --ignore-unmatch vendor/
+	git rm -r --force --quiet --ignore-unmatch vendor/
 	carton install
 	carton bundle
 	git add cpanfile cpanfile.snapshot vendor
