@@ -21,6 +21,9 @@ update: validate
 	carton install
 	carton bundle
 	git add cpanfile cpanfile.snapshot vendor
+	git status
+	@echo ""
 	@echo "Staged changes ready for you to review and commit!"
+	@echo ""
 
 .PHONY : validate build install clean update
