@@ -2,7 +2,7 @@
 
 THIS := $(lastword $(MAKEFILE_LIST))
 
-prefix ?= /usr/local
+prefix ?= /usr
 datarootdir ?= $(prefix)/share/sqitch
 datadir ?= $(datarootdir)
 
