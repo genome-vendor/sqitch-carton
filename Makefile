@@ -14,7 +14,7 @@ install: validate
 	@echo Install!
 
 clean:
-	rm -rf local/
+	rm --recursive --force local/
 
 update: validate
 	git rm -rf vendor/
