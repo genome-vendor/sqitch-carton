@@ -1,0 +1,5 @@
+sqitch-carton (0.982-1) unstable; urgency=low
+
+  * Initial release of standalone Sqitch 0.982.
+
+ -- Nathaniel Nutter <nnutter@genome.wustl.edu>  Wed, 20 Nov 2013 15:07:31 -0600
