@@ -9,5 +9,15 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+DEB_PACKAGING_DIR = debian/sqitch-carton/usr
+INSTALLED_PREFIX = /usr
+
 %:
 	dh  $@
+
+overrride_dh_auto_build:
+	make build
+
+override_dh_auto_install:
+	prefix=$(DEB_PACKAGING_DIR) exec_prefix=$(INSTALLED_PREFIX) make install
+	

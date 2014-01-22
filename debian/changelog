@@ -1,3 +1,9 @@
+sqitch-carton (0.982-2) unstable; urgency=low
+
+  * Change installation paths so it can find the SQL templates
+
+ -- Anthony Brummett <abrummet@genome.wustl.edu>  Tue, 21 Jan 2014 15:07:31 -0600
+
 sqitch-carton (0.982-1) unstable; urgency=low
 
   * Initial release of standalone Sqitch 0.982.
