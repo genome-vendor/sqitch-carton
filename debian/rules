@@ -21,3 +21,5 @@ overrride_dh_auto_build:
 override_dh_auto_install:
 	prefix=$(DEB_PACKAGING_DIR) exec_prefix=$(INSTALLED_PREFIX) make install
 	
+override_dh_strip:
+	echo "Do not create a *dbgsym*.ddeb package."
