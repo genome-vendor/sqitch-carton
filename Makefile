@@ -39,7 +39,7 @@ BIN_WRAPPER=\
 INSTALL_WRAPPER = install --directory $(2); echo $(BIN_WRAPPER) | sed 's/^ *//' > $(2)/$(1)
 
 build: validate
-	carton install --deployment
+	HOME=`pwd`/local carton install --deployment
 
 validate:
 ifneq ($(THIS), Makefile)
