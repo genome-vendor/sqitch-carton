@@ -9,8 +9,11 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-DEB_PACKAGING_DIR = debian/$(shell dh_listpackages)/usr
+DEB_PACKAGING_DIR = debian/$(shell dh_listpackages)
+STAGING_PREFIX = $(DEB_PACKAGING_DIR)/usr
+SYSCONF_STAGING_DIR = $(DEB_PACKAGING_DIR)/etc
 INSTALLED_PREFIX = /usr
+CARTON_STAGING_DIR = $(shell pwd)/local
 
 %:
 	dh  $@
@@ -19,5 +22,5 @@ overrride_dh_auto_build:
 	make build
 
 override_dh_auto_install:
-	prefix=$(DEB_PACKAGING_DIR) exec_prefix=$(INSTALLED_PREFIX) make install
+	deb_staging_dir=$(DEB_PACKAGING_DIR) carton_staging_dir=$(CARTON_STAGING_DIR)  prefix=$(STAGING_PREFIX) sysconfdir=$(SYSCONF_STAGING_DIR) exec_prefix=$(INSTALLED_PREFIX) make install
 	
