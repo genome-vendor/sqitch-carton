@@ -3,6 +3,8 @@
 THIS := $(lastword $(MAKEFILE_LIST))
 
 # Variables for installing into the debian packaging/staging directory
+deb_staging_dir ?= /usr
+carton_staging_dir ?= local
 prefix ?= /usr
 
 datarootdir ?= $(prefix)/share/sqitch
@@ -50,7 +52,9 @@ install: validate
 	@$(call INSTALL,local/etc,$(sysconfdir))
 	@$(call INSTALL,local/bin,$(libexecdir))
 	@$(call INSTALL,local/lib,$(libdir))
-	@$(call INSTALL_WRAPPER,sqitch,$(DESTDIR)$(bindir))
+	@$(call INSTALL_WRAPPER,sqitch,$(bindir))
+	# Remove occurances of /vagrant/sqitch-carton/local
+	find $(deb_staging_dir) -type f -print0 | xargs -0 sed -i s,$(carton_staging_dir),,g
 
 clean:
 	rm --recursive --force local/

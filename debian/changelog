@@ -1,3 +1,9 @@
+sqitch-carton (0.982-3) unstable; urgency=low
+
+  * Attempt 2 at change installation paths so it can find the SQL templates
+
+ -- Anthony Brummett <abrummet@genome.wustl.edu>  Thu, 30 Jan 2014 13:44:31 -0600
+
 sqitch-carton (0.982-2) unstable; urgency=low
 
   * Change installation paths so it can find the SQL templates
